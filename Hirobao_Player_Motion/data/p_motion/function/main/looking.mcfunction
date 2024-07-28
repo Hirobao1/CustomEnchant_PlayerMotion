@@ -43,4 +43,4 @@ scoreboard players reset $z_look hb.Motion
 
 # Motion付与
 scoreboard players set #looking.flag hb.Motion 1
-execute if entity @s[type=player] at @s run function p_motion:system/motion_set
+execute if entity @s[type=player] run function p_motion:system/motion_set
