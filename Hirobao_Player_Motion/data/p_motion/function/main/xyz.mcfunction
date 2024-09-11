@@ -27,7 +27,6 @@ execute store result storage hb:motion macro.x3 int 1 run scoreboard players ope
 execute if data storage hb:motion macro{x1:0} run data modify storage hb:motion macro.x1 set value 100
 execute if data storage hb:motion macro{x2:0} run data modify storage hb:motion macro.x2 set value 100
 execute if data storage hb:motion macro{x3:0} run data modify storage hb:motion macro.x3 set value 100
-execute if data storage hb:motion signs{X:-1} run scoreboard players operation $x hb.Motion *= #-1 hb.Motion
 
 execute if score $y hb.Motion matches ..-1 run data modify storage hb:motion signs.Y set value -1
 execute if data storage hb:motion signs{Y:-1} run scoreboard players operation $y hb.Motion *= #-1 hb.Motion
@@ -37,7 +36,6 @@ execute store result storage hb:motion macro.y3 int 1 run scoreboard players ope
 execute if data storage hb:motion macro{y1:0} run data modify storage hb:motion macro.y1 set value 100
 execute if data storage hb:motion macro{y2:0} run data modify storage hb:motion macro.y2 set value 100
 execute if data storage hb:motion macro{y3:0} run data modify storage hb:motion macro.y3 set value 100
-execute if data storage hb:motion signs{Y:-1} run scoreboard players operation $y hb.Motion *= #-1 hb.Motion
 execute if data storage hb:motion signs{Y:-1} run data modify storage hb:motion macro.signy set value -
 
 execute if score $z hb.Motion matches ..-1 run data modify storage hb:motion signs.Z set value -1
@@ -48,7 +46,6 @@ execute store result storage hb:motion macro.z3 int 1 run scoreboard players ope
 execute if data storage hb:motion macro{z1:0} run data modify storage hb:motion macro.z1 set value 100
 execute if data storage hb:motion macro{z2:0} run data modify storage hb:motion macro.z2 set value 100
 execute if data storage hb:motion macro{z3:0} run data modify storage hb:motion macro.z3 set value 100
-execute if data storage hb:motion signs{Z:-1} run scoreboard players operation $z hb.Motion *= #-1 hb.Motion
 
 # 不要スコア消去
 scoreboard players reset $x_ hb.Motion
