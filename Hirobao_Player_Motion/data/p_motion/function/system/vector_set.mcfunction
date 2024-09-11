@@ -1,3 +1,5 @@
+#> p_motion:system/vector_set
+# 視線先の分解ベクトル
 
 # 単位ベクトル値取得
 tp @s ^ ^ ^1 ~ ~
