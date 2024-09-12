@@ -44,9 +44,6 @@ execute if data storage hb:motion macro{z3:0} run data modify storage hb:motion 
 scoreboard players reset $x_ hb.Motion
 scoreboard players reset $y_ hb.Motion
 scoreboard players reset $z_ hb.Motion
-scoreboard players reset $x_ hb.Motion
-scoreboard players reset $y_ hb.Motion
-scoreboard players reset $z_ hb.Motion
 
 # Motion付与エンティティ召喚
 execute if entity @s[type=player] at @s run function p_motion:system/summon with storage hb:motion macro
