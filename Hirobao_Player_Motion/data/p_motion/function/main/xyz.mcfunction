@@ -56,4 +56,4 @@ scoreboard players reset $y_ hb.Motion
 scoreboard players reset $z_ hb.Motion
 
 # Motion付与エンティティ召喚
-execute if entity @s[type=player] run function p_motion:system/summon with storage hb:motion macro
+execute if entity @s[type=player] positioned as @s run function p_motion:system/summon with storage hb:motion macro
