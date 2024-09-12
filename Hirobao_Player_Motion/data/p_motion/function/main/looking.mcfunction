@@ -3,6 +3,9 @@
 #
 # scoreboard players set $strength hb.Motion 0 (-1000000~1000000)
 
+# 実行者タグ
+tag @s add hb.executor
+
 # 値の修正
 execute if score $strength hb.Motion matches 1000001.. run scoreboard players set $strength hb.Motion 1000000
 execute if score $strength hb.Motion matches ..-1000001 run scoreboard players set $strength hb.Motion -1000000

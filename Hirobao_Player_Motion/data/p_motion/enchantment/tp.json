@@ -1,0 +1,60 @@
+{
+	"description": "",
+	"supported_items": [],
+	"weight": 1,
+	"max_level": 1,
+	"min_cost": {
+		"base": 0,
+		"per_level_above_first": 0
+	},
+	"max_cost": {
+		"base": 0,
+		"per_level_above_first": 0
+	},
+	"anvil_cost": 0,
+	"slots": [
+		"armor"
+	],
+	"effects": {
+		"minecraft:tick": [
+			{
+				"effect": {
+					"type": "minecraft:run_function",
+					"function": "p_motion:enchant/tp_before"
+				},
+				"requirements": {
+					"condition": "minecraft:inverted",
+					"term": {
+						"condition": "minecraft:entity_properties",
+						"entity": "this",
+						"predicate": {
+							"nbt": "{Tags:[\"tp_before\"]}"
+						}
+					}
+				}
+			},
+            {
+				"effect": {
+					"type": "minecraft:run_function",
+					"function": "p_motion:enchant/tp_after"
+				},
+				"requirements": {
+					"condition": "minecraft:inverted",
+					"term": {
+						"condition": "minecraft:entity_properties",
+						"entity": "this",
+						"predicate": {
+							"nbt": "{Tags:[\"tp_after\"]}"
+						}
+					}
+				}
+			},
+            {
+                "effect": {
+					"type": "minecraft:run_function",
+					"function": "p_motion:enchant/kill"
+                }
+            }
+		]
+	}
+}
