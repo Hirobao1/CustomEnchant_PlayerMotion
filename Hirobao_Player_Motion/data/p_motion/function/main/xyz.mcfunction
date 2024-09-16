@@ -27,6 +27,7 @@ execute if data storage hb:motion signs{X:-1} run scoreboard players operation $
 execute store result storage hb:motion macro.x1 int 0.0001 run scoreboard players operation $x_ hb.Motion = $x hb.Motion
 execute store result storage hb:motion macro.x2 int 0.01 run scoreboard players operation $x_ hb.Motion %= #10000 hb.Motion
 execute store result storage hb:motion macro.x3 int 1 run scoreboard players operation $x_ hb.Motion %= #100 hb.Motion
+execute if data storage hb:motion signs{X:-1} run scoreboard players operation $x hb.Motion *= #-1 hb.Motion
 execute if data storage hb:motion macro{x1:0} run data modify storage hb:motion macro.x1 set value 100
 execute if data storage hb:motion macro{x2:0} run data modify storage hb:motion macro.x2 set value 100
 execute if data storage hb:motion macro{x3:0} run data modify storage hb:motion macro.x3 set value 100
@@ -36,6 +37,7 @@ execute if data storage hb:motion signs{Y:-1} run scoreboard players operation $
 execute store result storage hb:motion macro.y1 int 0.0001 run scoreboard players operation $y_ hb.Motion = $y hb.Motion
 execute store result storage hb:motion macro.y2 int 0.01 run scoreboard players operation $y_ hb.Motion %= #10000 hb.Motion
 execute store result storage hb:motion macro.y3 int 1 run scoreboard players operation $y_ hb.Motion %= #100 hb.Motion
+execute if data storage hb:motion signs{Y:-1} run scoreboard players operation $y hb.Motion *= #-1 hb.Motion
 execute if data storage hb:motion macro{y1:0} run data modify storage hb:motion macro.y1 set value 100
 execute if data storage hb:motion macro{y2:0} run data modify storage hb:motion macro.y2 set value 100
 execute if data storage hb:motion macro{y3:0} run data modify storage hb:motion macro.y3 set value 100
@@ -46,6 +48,7 @@ execute if data storage hb:motion signs{Z:-1} run scoreboard players operation $
 execute store result storage hb:motion macro.z1 int 0.0001 run scoreboard players operation $z_ hb.Motion = $z hb.Motion
 execute store result storage hb:motion macro.z2 int 0.01 run scoreboard players operation $z_ hb.Motion %= #10000 hb.Motion
 execute store result storage hb:motion macro.z3 int 1 run scoreboard players operation $z_ hb.Motion %= #100 hb.Motion
+execute if data storage hb:motion signs{Z:-1} run scoreboard players operation $z hb.Motion *= #-1 hb.Motion
 execute if data storage hb:motion macro{z1:0} run data modify storage hb:motion macro.z1 set value 100
 execute if data storage hb:motion macro{z2:0} run data modify storage hb:motion macro.z2 set value 100
 execute if data storage hb:motion macro{z3:0} run data modify storage hb:motion macro.z3 set value 100
