@@ -2,7 +2,7 @@
 このデータパックは、エンチャントの爆発のknockbackを使用したプレイヤーのMotionを操作するライブラリです。<br>
 
 ## 対応バージョン
-Minecraft JE 1.21<br>
+Minecraft JE 1.21</br>
 ※1.21.5対応のものは[Ver1.21.5](https://github.com/Hirobao1/CustomEnchant_PlayerMotion/tree/Ver1.21.5)からDLしてください
 
 ## 使い方
