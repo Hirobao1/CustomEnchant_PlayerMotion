@@ -2,7 +2,7 @@
 このデータパックは、エンチャントの爆発のknockbackを使用したプレイヤーのMotionを操作するライブラリです。<br>
 
 ## 対応バージョン
-Minecraft JE 1.21
+Minecraft JE 1.21.5
 
 ## 使い方
 ### Rotationの方向でMotionを代入する
