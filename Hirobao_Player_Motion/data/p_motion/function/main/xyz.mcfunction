@@ -19,8 +19,8 @@ execute unless score $x hb.Motion = $x hb.Motion run scoreboard players set $x h
 execute unless score $y hb.Motion = $y hb.Motion run scoreboard players set $y hb.Motion 0
 execute unless score $z hb.Motion = $z hb.Motion run scoreboard players set $z hb.Motion 0
 
-# 値を取得 ( x1:1 , x2:1/100, x3:1/10000 )
-data merge storage hb:motion {signs:{X:1,Y:1,Z:1},macro:{x1:0,x2:0,x3:0,y1:0,y2:0,y3:0,z1:0,z2:0,z3:0,signy:+}}
+# 値を取得 ( x1:1, x2:1/100, x3:1/10000 )
+data merge storage hb:motion {signs:{X:1,Y:1,Z:1},macro:{x1:0,x2:0,x3:0,y1:0,y2:0,y3:0,z1:0,z2:0,z3:0,signy:"+"}}
 
 execute if score $x hb.Motion matches ..-1 run data modify storage hb:motion signs.X set value -1
 execute if data storage hb:motion signs{X:-1} run scoreboard players operation $x hb.Motion *= #-1 hb.Motion
@@ -41,7 +41,7 @@ execute if data storage hb:motion signs{Y:-1} run scoreboard players operation $
 execute if data storage hb:motion macro{y1:0} run data modify storage hb:motion macro.y1 set value 100
 execute if data storage hb:motion macro{y2:0} run data modify storage hb:motion macro.y2 set value 100
 execute if data storage hb:motion macro{y3:0} run data modify storage hb:motion macro.y3 set value 100
-execute if data storage hb:motion signs{Y:-1} run data modify storage hb:motion macro.signy set value -
+execute if data storage hb:motion signs{Y:-1} run data modify storage hb:motion macro.signy set value "-"
 
 execute if score $z hb.Motion matches ..-1 run data modify storage hb:motion signs.Z set value -1
 execute if data storage hb:motion signs{Z:-1} run scoreboard players operation $z hb.Motion *= #-1 hb.Motion
