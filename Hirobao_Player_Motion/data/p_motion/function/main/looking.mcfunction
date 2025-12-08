@@ -11,7 +11,7 @@ scoreboard players set #rotate_xyz hb.Motion 0
 
 # 値を取得 ( x1:1/10000, x2:1/100, x3:1, level:1~99,100~199,200~250)
 data merge storage hb:motion {macro:{x1:0,x2:0,x3:0,y1:0,y2:0,y3:0,z1:0,z2:0,z3:0,signx:"+x",signy:"+y",signz:"+z",UUID:[]}}
-execute positioned 0.0 0.0 0.0 summon marker run function p_motion:system/vector_set
+execute positioned 0.0 0.0 0.0 rotated as @s summon marker run function p_motion:system/vector_set
 
 execute if score $x_ hb.Motion matches ..-1 run data modify storage hb:motion macro.signx set value "-x"
 execute if data storage hb:motion macro{signx:"-x"} run scoreboard players operation $x_ hb.Motion *= #-1 hb.Motion
