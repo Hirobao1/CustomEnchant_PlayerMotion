@@ -1,4 +1,4 @@
-#> hb_util:main/xyz
+#> p_motion:main/xyz
 # 実行者にxyzでMotionを付与する
 #
 # scoreboard players set $x hb.Motion 0 (-500000~500000)
