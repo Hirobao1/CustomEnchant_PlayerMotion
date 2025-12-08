@@ -1,6 +1,7 @@
 {
-   "pack": {
-      "pack_format": 71,
-      "description": "made by hirobao"
-   }
+  "pack": {
+    "description": "made by hirobao",
+    "min_format": [94,1],
+    "max_format": 94
+  }
 }

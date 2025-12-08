@@ -1,23 +1,7 @@
-#> p_motion:system/summon
-# Motion付与用エンティティ召喚
 
-# 一時的にTPしたエンティティを戻す
-summon armor_stand ~ ~ ~ {Marker:1b,Small:1b,Invisible:1b,Silent:1b,equipment:{chest:{id:"stone",components:{enchantments:{"p_motion:tp":1}}}},Tags:["tp_after","hb.enc_stand"]}
 
-# Y軸
-$summon minecraft:armor_stand ~ ~ ~ {Marker:1b,Small:1b,Invisible:1b,Silent:1b,equipment:{chest:{id:stone,components:{enchantments:{"p_motion:vertical1":$(y1),"p_motion:vertical2":$(y2),"p_motion:vertical3":$(y3)}}}},Tags:["hb.enc_stand","$(signy)","v1_$(y1)","v2_$(y2)","v3_$(y3)"]}
-
-# X軸
-$execute if data storage hb:motion signs{X:1} run summon minecraft:armor_stand ~-0.0001 ~ ~ {Marker:1b,Small:1b,Invisible:1b,Silent:1b,equipment:{chest:{id:stone,components:{enchantments:{"p_motion:horizon1":$(x1),"p_motion:horizon2":$(x2),"p_motion:horizon3":$(x3)}}}},Tags:["hb.enc_stand","+","h1_$(x1)","h2_$(x2)","h3_$(x3)"]}
-$execute if data storage hb:motion signs{X:1} run summon minecraft:armor_stand ~0.0001 ~ ~ {Marker:1b,Small:1b,Invisible:1b,Silent:1b,equipment:{chest:{id:stone,components:{enchantments:{"p_motion:horizon1":$(x1),"p_motion:horizon2":$(x2),"p_motion:horizon3":$(x3)}}}},Tags:["hb.enc_stand","-","h1_$(x1)","h2_$(x2)","h3_$(x3)"]}
-$execute if data storage hb:motion signs{X:-1} run summon minecraft:armor_stand ~0.0001 ~ ~ {Marker:1b,Small:1b,Invisible:1b,Silent:1b,equipment:{chest:{id:stone,components:{enchantments:{"p_motion:horizon1":$(x1),"p_motion:horizon2":$(x2),"p_motion:horizon3":$(x3)}}}},Tags:["hb.enc_stand","+","h1_$(x1)","h2_$(x2)","h3_$(x3)"]}
-$execute if data storage hb:motion signs{X:-1} run summon minecraft:armor_stand ~-0.0001 ~ ~ {Marker:1b,Small:1b,Invisible:1b,Silent:1b,equipment:{chest:{id:stone,components:{enchantments:{"p_motion:horizon1":$(x1),"p_motion:horizon2":$(x2),"p_motion:horizon3":$(x3)}}}},Tags:["hb.enc_stand","-","h1_$(x1)","h2_$(x2)","h3_$(x3)"]}
-
-# Z軸
-$execute if data storage hb:motion signs{Z:1} run summon minecraft:armor_stand ~ ~ ~-0.0001 {Marker:1b,Small:1b,Invisible:1b,Silent:1b,equipment:{chest:{id:stone,components:{enchantments:{"p_motion:horizon1":$(z1),"p_motion:horizon2":$(z2),"p_motion:horizon3":$(z3)}}}},Tags:["hb.enc_stand","+","h1_$(z1)","h2_$(z2)","h3_$(z3)"]}
-$execute if data storage hb:motion signs{Z:1} run summon minecraft:armor_stand ~ ~ ~0.0001 {Marker:1b,Small:1b,Invisible:1b,Silent:1b,equipment:{chest:{id:stone,components:{enchantments:{"p_motion:horizon1":$(z1),"p_motion:horizon2":$(z2),"p_motion:horizon3":$(z3)}}}},Tags:["hb.enc_stand","-","h1_$(z1)","h2_$(z2)","h3_$(z3)"]}
-$execute if data storage hb:motion signs{Z:-1} run summon minecraft:armor_stand ~ ~ ~0.0001 {Marker:1b,Small:1b,Invisible:1b,Silent:1b,equipment:{chest:{id:stone,components:{enchantments:{"p_motion:horizon1":$(z1),"p_motion:horizon2":$(z2),"p_motion:horizon3":$(z3)}}}},Tags:["hb.enc_stand","+","h1_$(z1)","h2_$(z2)","h3_$(z3)"]}
-$execute if data storage hb:motion signs{Z:-1} run summon minecraft:armor_stand ~ ~ ~-0.0001 {Marker:1b,Small:1b,Invisible:1b,Silent:1b,equipment:{chest:{id:stone,components:{enchantments:{"p_motion:horizon1":$(z1),"p_motion:horizon2":$(z2),"p_motion:horizon3":$(z3)}}}},Tags:["hb.enc_stand","-","h1_$(z1)","h2_$(z2)","h3_$(z3)"]}
-
-# 同じ位置のエンティティを一時的にTP
-summon armor_stand ~ ~ ~ {Marker:1b,Small:1b,Invisible:1b,Silent:1b,equipment:{chest:{id:"stone",components:{enchantments:{"p_motion:tp":1}}}},Tags:["tp_before","hb.enc_stand"]}
+# 検知エンティティ 21a7163d-5fc5-411b-a466-6800627c9da0
+execute unless entity 21a7163d-5fc5-411b-a466-6800627c9da0 run summon wandering_trader 0.0 -100.0 0.0 {NoAI:true,Silent:true,DespawnDelay:2,UUID:[I; 564598333, 1606762779, -1536792576, 1652333984]}
+$summon arrow 0.0 -98.0 0.0 {Motion:[0d,-1d,0d],SoundEvent:intentionally_empty,weapon:{components:{"minecraft:enchantments":{"p_motion:detect_entity":1,"p_motion:x":$(x1),"p_motion:y":$(y1),"p_motion:z":$(z1)}},count:1,id:"minecraft:bow"},Tags:["$(signx)","$(signy)","$(signz)"],Owner:$(UUID)}
+$summon arrow 0.0 -98.0 0.0 {Motion:[0d,-1d,0d],SoundEvent:intentionally_empty,weapon:{components:{"minecraft:enchantments":{"p_motion:detect_entity":1,"p_motion:x":$(x2),"p_motion:y":$(y2),"p_motion:z":$(z2)}},count:1,id:"minecraft:bow"},Tags:["$(signx)","$(signy)","$(signz)"],Owner:$(UUID)}
+$summon arrow 0.0 -98.0 0.0 {Motion:[0d,-1d,0d],SoundEvent:intentionally_empty,weapon:{components:{"minecraft:enchantments":{"p_motion:detect_entity":1,"p_motion:x":$(x3),"p_motion:y":$(y3),"p_motion:z":$(z3)}},count:1,id:"minecraft:bow"},Tags:["$(signx)","$(signy)","$(signz)"],Owner:$(UUID)}
