@@ -1,8 +1,8 @@
 # PlayerMotion
-このデータパックは、エンチャントの爆発のknockbackを使用したプレイヤーのMotionを操作するライブラリです。<br>
+このデータパックは、エンチャントの突進のMotionを使用したプレイヤーのMotionを操作するライブラリです。<br>
 
 ## 対応バージョン
-Minecraft JE 1.21.5
+Minecraft JE 1.21.11
 
 ## 使い方
 ### Rotationの方向でMotionを代入する
@@ -11,7 +11,7 @@ scoreboard players set $strength hb.Motion 12345
 function #p_motion:looking
 ```
 - `$strength`には、実行者に実行時のRotationの方向にかかるMotionの値を指定します。
-- 値は10000倍で指定します。（ 範囲: -1000000～1000000 ）<br>例: `$strength`が12345の場合、視線方向に1.2345ブロック/tickのMotionがかかります。
+- 値は10000倍で指定します。（ 範囲: -500000～500000 ）<br>例: `$strength`が12345の場合、視線方向に1.2345ブロック/tickのMotionがかかります。
 
 ### XYZの方向でMotionを代入する
 ```
@@ -21,12 +21,11 @@ scoreboard players set $z hb.Motion -2800
 function #p_motion:xyz
 ```
 - `$x`, `$y`, `$z`には、実行者にそれぞれ x, y, z方向にかかるMotionの値を指定します。
-- 値は10000倍で指定します。（ 範囲: -1000000～1000000 ）
+- 値は10000倍で指定します。（ 範囲: -500000～500000 ）
 
 ## 注意事項
 カスタムエンチャントは実験的機能のため、シングルの場合ワールド参加時に警告がでます。<br>
 データパックを導入した際は、ワールドを再読み込みしてください。`reload`コマンドでは更新できません。<br>
-実行は`function`の`tick`かコマンドブロックで実行してください。`advancement`や`enchantment`から実行すると1tick遅れて実行されます。<br>
 シングル、バニラサーバー以外では検証していません。
 
 ## 連絡先
