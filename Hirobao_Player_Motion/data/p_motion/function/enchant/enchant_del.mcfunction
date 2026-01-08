@@ -1,0 +1,1 @@
+item modify entity @s armor.body {function:set_enchantments,enchantments:{"p_motion:forward_1":0,"p_motion:forward_2":0,"p_motion:forward_3":0,"p_motion:left_1":0,"p_motion:left_2":0,"p_motion:left_3":0,"p_motion:up_1":0,"p_motion:up_2":0,"p_motion:up_3":0}}

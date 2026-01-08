@@ -1,22 +1,15 @@
-#> p_motion:main/looking
-# 実行時の向きにMotionを付与する
-#
-# scoreboard players set $strength hb.Motion 0 (-250000~250000)
+#> p_motion:main/queue
+# queueの値でMotionを付与する
 
-# 値の修正
-execute if score $strength hb.Motion matches 250001.. run scoreboard players set $strength hb.Motion 250000
-execute if score $strength hb.Motion matches ..-250001 run scoreboard players set $strength hb.Motion -250000
-execute unless score $strength hb.Motion = $strength hb.Motion run scoreboard players set $strength hb.Motion 0
+tag @s remove hb.pm_queue
 
-# 値を取得 ( f1:1/10000, f2:1/100, f3:1, level:1~99,100~199,200~250 )
-data merge storage hb:motion {macro:{f1:0,f2:0,f3:0,u1:0,u2:0,u3:0,l1:0,l2:0,l3:0,signf:"+forward",signu:"+up",signl:"+left",UUID:[]}}
-execute positioned 0.0 0.0 0.0 summon marker run function p_motion:system/vector_set
-
-# 既にエンチャントがある場合キューに入れる
-execute if items entity @s armor.body *[enchantments~[{enchantments:"p_motion:forward_1",levels:{min:1}}]] run return run function p_motion:system/queue_set
+# 値を取得
+execute store result score #x_ hb.Motion run scoreboard players get @s hb.Queue_x
+execute store result score #y_ hb.Motion run scoreboard players get @s hb.Queue_y
+execute store result score #z_ hb.Motion run scoreboard players get @s hb.Queue_z
 
 # 絶対座標ベクトル変換
-execute positioned 0.0 0.0 0.0 summon marker run function p_motion:system/local_to_world
+execute at @s positioned 0.0 0.0 0.0 summon marker run function p_motion:system/local_to_world
 # forward
 execute if score #local_fx hb.Motion matches ..-1 run data modify storage hb:motion macro.signf set value "-forward"
 execute if data storage hb:motion macro{signf:"-forward"} run scoreboard players operation #local_fx hb.Motion *= #-1 hb.Motion
@@ -44,6 +37,9 @@ scoreboard players reset #z_ hb.Motion
 scoreboard players reset #local_fx_ hb.Motion
 scoreboard players reset #local_ux_ hb.Motion
 scoreboard players reset #local_lx_ hb.Motion
+scoreboard players reset @s hb.Queue_x
+scoreboard players reset @s hb.Queue_y
+scoreboard players reset @s hb.Queue_z
 
 # エンチャントセット
 function p_motion:system/enchant_set with storage hb:motion macro
