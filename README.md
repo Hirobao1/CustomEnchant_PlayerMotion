@@ -1,16 +1,18 @@
 # PlayerMotion
-このデータパックは、エンチャントの突進のapply_impulseを使用したプレイヤーのMotionを操作するライブラリです。<br>
+このデータパックは、エンチャントの`apply_impulse`を使用したプレイヤーのMotionを操作するライブラリです。<br>
 
 ## 対応バージョン
-Minecraft JE 1.21.11
+Minecraft JE 1.21.11<br><br>
+過去バージョン向けのデータパックは<br>
+[Releases](https://github.com/Hirobao1/CustomEnchant_PlayerMotion/releases)からダウンロードしてください。
 
 ## 使い方
 ### Rotationの方向でMotionを代入する
 ```
 scoreboard players set $strength hb.Motion 12345
-function #p_motion:looking
+execute rotated 45 20 run function #p_motion:looking
 ```
-- `$strength`には、実行者に実行時のRotationの方向にかかるMotionの値を指定します。
+- `$strength`には、実行者に実行時の向きにかかるMotionの値を指定します。
 - 値は10000倍で指定します。（ 範囲: -250000～250000 ）<br>例: `$strength`が12345の場合、視線方向に1.2345ブロック/tickのMotionがかかります。
 
 ### XYZの方向でMotionを代入する
