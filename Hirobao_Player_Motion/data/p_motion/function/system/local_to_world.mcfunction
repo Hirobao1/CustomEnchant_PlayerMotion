@@ -7,7 +7,7 @@
  execute store result score #world_fz hb.Motion store result score #world_uz hb.Motion store result score #world_lz hb.Motion run scoreboard players get #z_ hb.Motion
  
 # forward 単位ベクトル分解(*10000)
- execute positioned 0.0 0.0 0.0 run tp @s ^ ^ ^1
+ execute at @s positioned 0.0 0.0 0.0 run tp @s ^ ^ ^1
  data modify storage hb:motion Pos set from entity @s Pos
  execute store result score #local_fx hb.Motion run data get storage hb:motion Pos[0] 10000
  execute store result score #local_fy hb.Motion run data get storage hb:motion Pos[1] 10000
@@ -20,7 +20,7 @@
  execute if score #local_flag_1 hb.Motion matches 1 run scoreboard players operation #local_fy hb.Motion *= #-1 hb.Motion
  execute if score #local_flag_2 hb.Motion matches 1 run scoreboard players operation #local_fz hb.Motion *= #-1 hb.Motion
 # up 単位ベクトル分解(*10000)
- execute positioned 0.0 0.0 0.0 run tp @s ^ ^1 ^
+ execute at @s positioned 0.0 0.0 0.0 run tp @s ^ ^1 ^
  data modify storage hb:motion Pos set from entity @s Pos
  execute store result score #local_ux hb.Motion run data get storage hb:motion Pos[0] 10000
  execute store result score #local_uy hb.Motion run data get storage hb:motion Pos[1] 10000
@@ -33,7 +33,7 @@
  execute if score #local_flag_1 hb.Motion matches 1 run scoreboard players operation #local_uy hb.Motion *= #-1 hb.Motion
  execute if score #local_flag_2 hb.Motion matches 1 run scoreboard players operation #local_uz hb.Motion *= #-1 hb.Motion
 # left 単位ベクトル分解(*10000)
- execute positioned 0.0 0.0 0.0 run tp @s ^1 ^ ^
+ execute at @s positioned 0.0 0.0 0.0 run tp @s ^1 ^ ^
  data modify storage hb:motion Pos set from entity @s Pos
  execute store result score #local_lx hb.Motion run data get storage hb:motion Pos[0] 10000
  execute store result score #local_ly hb.Motion run data get storage hb:motion Pos[1] 10000
