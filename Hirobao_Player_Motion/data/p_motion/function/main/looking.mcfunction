@@ -16,7 +16,9 @@ execute positioned 0.0 0.0 0.0 summon marker run function p_motion:system/vector
 execute if items entity @s armor.body *[enchantments~[{enchantments:"p_motion:forward_1",levels:{min:1}}]] run return run function p_motion:system/queue_set
 
 # 絶対座標ベクトル変換
-execute rotated ~ ~ positioned 0.0 0.0 0.0 summon marker run function p_motion:system/local_to_world
+tag @s add hb.tmp
+execute positioned 0.0 0.0 0.0 summon marker run function p_motion:system/local_to_world
+tag @s remove hb.tmp
 # forward
 execute if score #local_fx hb.Motion matches ..-1 run data modify storage hb:motion macro.signf set value "-forward"
 execute if data storage hb:motion macro{signf:"-forward"} run scoreboard players operation #local_fx hb.Motion *= #-1 hb.Motion
