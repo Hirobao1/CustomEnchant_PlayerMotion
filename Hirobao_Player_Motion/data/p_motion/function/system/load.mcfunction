@@ -3,6 +3,7 @@
 
 # 使用するスコアボード
 scoreboard objectives add hb.Motion dummy
+scoreboard objectives add hb.Queue_x dummy
 scoreboard players set #-1 hb.Motion -1
 scoreboard players set #100 hb.Motion 100
 scoreboard players set #10000 hb.Motion 10000
