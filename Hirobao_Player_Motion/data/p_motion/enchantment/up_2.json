@@ -5,13 +5,13 @@
     "tick": [
       {
         "requirements": {
-          "condition": "minecraft:entity_properties",
+          "type": "entity_properties",
           "entity": "this",
           "predicate": {
             "slots": {
               "armor.body": {
                 "predicates": {
-                  "minecraft:custom_data": {
+                  "custom_data": {
                     "signu": "+up"
                   }
                 }
@@ -20,7 +20,7 @@
           }
         },
         "effect": {
-          "type": "minecraft:apply_impulse",
+          "type": "apply_impulse",
           "direction": [
             0,
             1,
@@ -42,13 +42,13 @@
       },
       {
         "requirements": {
-          "condition": "minecraft:entity_properties",
+          "type": "entity_properties",
           "entity": "this",
           "predicate": {
             "slots": {
               "armor.body": {
                 "predicates": {
-                  "minecraft:custom_data": {
+                  "custom_data": {
                     "signu": "-up"
                   }
                 }
@@ -57,7 +57,7 @@
           }
         },
         "effect": {
-          "type": "minecraft:apply_impulse",
+          "type": "apply_impulse",
           "direction": [
             0,
             1,

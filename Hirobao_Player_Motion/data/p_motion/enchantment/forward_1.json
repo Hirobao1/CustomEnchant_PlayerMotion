@@ -2,16 +2,16 @@
   "anvil_cost": 0,
   "description": "hb.Motion_forward_01",
   "effects": {
-    "minecraft:tick": [
+    "tick": [
       {
         "requirements": {
-          "condition": "minecraft:entity_properties",
+          "type": "entity_properties",
           "entity": "this",
           "predicate": {
             "slots": {
               "armor.body": {
                 "predicates": {
-                  "minecraft:custom_data": {
+                  "custom_data": {
                     "signf": "+forward"
                   }
                 }
@@ -20,7 +20,7 @@
           }
         },
         "effect": {
-          "type": "minecraft:apply_impulse",
+          "type": "apply_impulse",
           "direction": [
             0,
             0,
@@ -42,13 +42,13 @@
       },
       {
         "requirements": {
-          "condition": "minecraft:entity_properties",
+          "type": "entity_properties",
           "entity": "this",
           "predicate": {
             "slots": {
               "armor.body": {
                 "predicates": {
-                  "minecraft:custom_data": {
+                  "custom_data": {
                     "signf": "-forward"
                   }
                 }
@@ -57,7 +57,7 @@
           }
         },
         "effect": {
-          "type": "minecraft:apply_impulse",
+          "type": "apply_impulse",
           "direction": [
             0,
             0,

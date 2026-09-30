@@ -1,0 +1,29 @@
+{
+  "type": "round",
+  "input": {
+    "type": "add",
+    "inputs": [
+      {
+        "type": "mul",
+        "inputs": [
+          {"type": "storage", "storage": "hb:motion", "path": "world[0]"},
+          {"type": "storage", "storage": "hb:motion", "path": "basis[0]"}
+        ]
+      },
+      {
+        "type": "mul",
+        "inputs": [
+          {"type": "storage", "storage": "hb:motion", "path": "world[1]"},
+          {"type": "storage", "storage": "hb:motion", "path": "basis[1]"}
+        ]
+      },
+      {
+        "type": "mul",
+        "inputs": [
+          {"type": "storage", "storage": "hb:motion", "path": "world[2]"},
+          {"type": "storage", "storage": "hb:motion", "path": "basis[2]"}
+        ]
+      }
+    ]
+  }
+}
