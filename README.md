@@ -3,7 +3,8 @@
 
 ## 対応バージョン
 Minecraft JE 1.21.11<br>
-Minecraft JE 26.1<br><br>
+Minecraft JE 26.1<br>
+Minecraft JE 26.2<br><br>
 過去バージョン向けのデータパックは<br>
 [Releases](https://github.com/Hirobao1/CustomEnchant_PlayerMotion/releases)からダウンロードしてください。
 
