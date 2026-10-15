@@ -13,7 +13,8 @@
       "entity": "this",
       "predicate": {
         "flags": {
-          "is_flying": true
+          "is_flying": true,
+          "is_fall_flying": false
         }
       }
     }
